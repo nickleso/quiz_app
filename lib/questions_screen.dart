@@ -51,11 +51,14 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               height: 30,
             ),
             ...currentQuestion.getShuffledAnswers().map(
-                  (answer) => AnswerButton(
-                    answerText: answer,
-                    onTap: () {
-                      answerQuestion(answer);
-                    },
+                  (answer) => Container(
+                    margin: const EdgeInsets.only(bottom: 10),
+                    child: AnswerButton(
+                      answerText: answer,
+                      onTap: () {
+                        answerQuestion(answer);
+                      },
+                    ),
                   ),
                 ),
           ],
